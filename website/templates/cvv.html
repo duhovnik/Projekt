@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVV code</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>CVV code</h1>
+            </div>
+			<img src="{{ url_for('static', filename='images/credit-card.jpg') }}" alt="Credit Card">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{{ url_for('results') }}">Validator Results history</a></li>
+                    <li><a href="/luhn-algorithm">Check Digits</a></li>
+					<li><a href="/check-digits">Check Digits</a></li>
+					<li><a href="/card-number-formats">Card Number Formats</a></li>
+					<li><a href="/cvv">Card Verification Value (CVV)</a></li>
+					<li><a href="/security-tips">Security Tips</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section>The Card Verification Value (CVV) is a series of three or four
+      digits usually found on the back of the credit card. It represents another
+      validation process and thus adds a level of protection. Some credit card
+      issuers call it the Card Verification Code (CVC). Its purpose is the same
+      regardless of its name.<br>
+      <br>
+      By asking for this small but significant additional piece of information,
+      a Point-Of-Sale system (POS) provides more assurance the account owner has
+      possession of the card —and that the number hasn’t been stolen.<br>
+      <br>
+      An expiration date is assigned to the card by the issuing bank and can
+      also help with security by requiring yet another verification step. A card
+      number may have been stolen, but without the expiration date, that number
+      becomes nearly worthless.<br>
+      <br>
+      <button onclick="history.back()">Go Back</button>
+      <!-- Add more detailed information about the Luhn algorithm here --> </section>
+  </body>
+</html>

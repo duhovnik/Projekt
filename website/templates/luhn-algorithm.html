@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luhn Algorithm</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Luhn algorithm</h1>
+            </div>
+			<img src="{{ url_for('static', filename='images/credit-card.jpg') }}" alt="Credit Card">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{{ url_for('results') }}">Validator Results history</a></li>
+                    <li><a href="/luhn-algorithm">Check Digits</a></li>
+					<li><a href="/check-digits">Check Digits</a></li>
+					<li><a href="/card-number-formats">Card Number Formats</a></li>
+					<li><a href="/cvv">Card Verification Value (CVV)</a></li>
+					<li><a href="/security-tips">Security Tips</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section>
+      <p> The Luhn algorithm, also known as the Modulus 10 algorithm, is a
+        widely used method for validating credit card numbers. It involves a
+        simple checksum formula to verify the numerical integrity of a credit
+        card number. </p>
+      <p>The Luhn algorithm or Luhn formula, also known as the "modulus 10" or
+        "mod 10" algorithm, named after its creator, IBM scientist Hans Peter
+        Luhn, is a simple check digit formula used to validate a variety of
+        identification numbers.<br>
+        <br>
+        It is described in U.S. Patent No. 2,950,048, granted on August 23,
+        1960.[1]<br>
+        <br>
+        The algorithm is in the public domain and is in wide use today. It is
+        specified in ISO/IEC 7812-1.[2] It is not intended to be a
+        cryptographically secure hash function; it was designed to protect
+        against accidental errors, not malicious attacks. Most credit cards and
+        many government identification numbers use the algorithm as a simple
+        method of distinguishing valid numbers from mistyped or otherwise
+        incorrect numbers.</p>
+      <p>Assume an example of an account number 1789372997 (just the "payload",
+        check digit not yet included):</p>
+      <p>The sum of the resulting digits is 56.<br>
+        <br>
+        The check digit is equal to <br>
+        10 − ( 56 mod 10 ) = 4<br>
+        <br>
+        <br>
+        This makes the full account number read 17893729974.</p>
+	<br>
+	<button onclick="history.back()">Go Back</button>
+
+      <!-- Add more detailed information about the Luhn algorithm here --> </section>
+  </body>
+</html>

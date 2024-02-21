@@ -1,0 +1,59 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>i
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check digits</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Check digits</h1>
+            </div>
+			<img src="{{ url_for('static', filename='images/credit-card.jpg') }}" alt="Credit Card">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{{ url_for('results') }}">Validator Results history</a></li>
+                    <li><a href="/luhn-algorithm">Check Digits</a></li>
+					<li><a href="/check-digits">Check Digits</a></li>
+					<li><a href="/card-number-formats">Card Number Formats</a></li>
+					<li><a href="/cvv">Card Verification Value (CVV)</a></li>
+					<li><a href="/security-tips">Security Tips</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section>
+      <p>Credit card numbers include check digits to enhance security. Learn how
+        to calculate and verify these check digits for different credit card
+        brands.</p>
+      <p>A check digit is a digit added to a number (either at the end or the
+        beginning) that validates the authenticity of the number. A simple
+        algorithm is applied to the other digits of the number which yields the
+        check digit. Check Digit Scheme can be used when an end-user has entered
+        in a credit card number and you want to validate it before sending it an
+        authorization.<br>
+        This self-checking scheme (referred to as the Luhn Mod-10 Method) is an
+        international standard for validating card account numbers (ISO
+        2894/ANSI 4.13). Such account numbers, which cannot exceed 19 digits
+        including the check digit, are assigned, embossed and encoded to include
+        a single check digit in the rightmost position. The check digit is
+        calculated as follows:<br>
+        Beginning on the right with the digit which immediately precedes the
+        check digit and moving toward the left, double every other digit. After
+        doubling each selected digit, if the result is ten or greater, add the
+        two digits together to arrive at a single-digit result.<br>
+        Each individual resulting digit (plus those skipped above) are then
+        added together.<br>
+        This sum is then subtracted from the lowest multiple of ten which is
+        equal to or greater than the sum and the single-digit result is the
+        check digit.</p>
+
+      <button onclick="history.back()">Go Back</button>
+      <!-- Add more detailed information about the Luhn algorithm here --> </section>
+  </body>
+</html>

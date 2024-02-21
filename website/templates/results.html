@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validator Results history</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Validator results history</h1>
+            </div>
+			<img src="{{ url_for('static', filename='images/credit-card.jpg') }}" alt="Credit Card">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{{ url_for('results') }}">Validator Results history</a></li>
+                    <li><a href="/luhn-algorithm">Check Digits</a></li>
+					<li><a href="/check-digits">Check Digits</a></li>
+					<li><a href="/card-number-formats">Card Number Formats</a></li>
+					<li><a href="/cvv">Card Verification Value (CVV)</a></li>
+					<li><a href="/security-tips">Security Tips</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Validation Results</h1>
+        {% for result in results %}
+        <p>{{ result }}</p>
+        {% endfor %}
+    </div>
+		<br>
+		
+	<button onclick="history.back()">Go Back</button>
+</body>
+</html>

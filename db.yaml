@@ -1,0 +1,4 @@
+mysql_host: 'db'
+mysql_user: 'root'
+mysql_password: 'strongpassword'
+mysql_db: 'credit_card_db'
