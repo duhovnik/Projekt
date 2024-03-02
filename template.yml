@@ -1,0 +1,30 @@
+{"variables": {
+    "my_token":""
+  },
+  "builders": [
+    {
+      "type": "digitalocean",
+      "ssh_username": "root",
+      "api_token": "{{ user `my_token` }}",
+      "image": "ubuntu-22-04-x64",
+      "region": "fra1",
+      "size": "s-1vcpu-512mb-10gb"
+    }],
+    "provisioners": [
+      {
+        "type": "file",
+        "source": "website/",
+        "destination": "/tmp"
+      },
+      {
+        "type": "file",
+        "source": "website/",
+        "destination": "/tmp"
+      },
+      {
+        "type": "shell",
+        "scripts": [
+          "scripts/configureserver.sh"
+        ]
+      }]
+}
