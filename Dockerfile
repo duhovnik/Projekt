@@ -5,7 +5,7 @@ FROM python:3.8-slim
 WORKDIR /app
 
 # Copy the current directory contents into the container at /usr/src/app
-COPY . /app
+COPY ./website /app
 
 # Install system dependencies for mysqlclient
 RUN apt-get update && apt-get install -y \

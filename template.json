@@ -1,0 +1,57 @@
+{"variables": {
+    "my_token":""
+  },
+  "builders": [
+    {
+      "type": "digitalocean",
+      "ssh_username": "root",
+      "api_token": "{{ user `my_token` }}",
+      "image": "ubuntu-22-04-x64",
+      "region": "fra1",
+      "size": "s-1vcpu-512mb-10gb"
+    }],
+    "provisioners": [
+      {
+        "type": "file",
+        "source": "website.zip",
+        "destination": "/tmp/website.zip"
+      },
+      {
+        "type": "shell",
+        "scripts": [
+          "scripts/unpack_website.sh"
+        ]
+      },
+      {
+        "type": "file",
+        "source": "Dockerfile",
+        "destination": "/tmp/Dockerfile"
+      },
+{
+        "type": "file",
+        "source": "Dockerfile-db",
+        "destination": "/tmp/Dockerfile-db"
+      },
+{
+        "type": "file",
+        "source": "docker-compose.yml",
+        "destination": "/tmp/docker-compose.yml"
+      },
+{
+        "type": "file",
+        "source": "init_db.sql",
+        "destination": "/tmp/init_db.sql"
+      },
+{
+        "type": "file",
+        "source": ".env",
+        "destination": "/tmp/.env"
+      },
+
+      {
+        "type": "shell",
+        "scripts": [
+          "scripts/configureserver.sh"
+        ]
+      }]
+}
