@@ -25,6 +25,6 @@ jobs:
     - name: Build Image with Packer
       run: packer build template.json
       env:
-        my_token: ${{ secrets.DIGITAL_OCEAN_API_TOKEN }}
+        api_token: ${{ secrets.DIGITAL_OCEAN_API_TOKEN }}
         MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQLROOTPASSWORD }}
         MYSQL_DATABASE: ${{ secrets.MYSQLDATABASE }}
