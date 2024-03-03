@@ -1,7 +1,4 @@
-{"variables": {
-    "api_token":""
-  },
-  "builders": [
+{"builders": [
     {
       "type": "digitalocean",
       "ssh_username": "root",
