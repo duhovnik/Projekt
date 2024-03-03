@@ -20,10 +20,10 @@ jobs:
       run: packer plugins install github.com/digitalocean/digitalocean
 
     - name: Validate Packer Template
-      run: packer validate template.json
+      run: packer validate -var 'api_token=${{ secrets.DIGITAL_OCEAN_API_TOKEN }}' template.json
 
     - name: Build Image with Packer
-      run: packer build template.json
+      run: packer build -var 'api_token=${{ secrets.DIGITAL_OCEAN_API_TOKEN }}' template.json
       env:
         DO_TOKEN: ${{ secrets.DIGITAL_OCEAN_API_TOKEN }}
         MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQLROOTPASSWORD }}
